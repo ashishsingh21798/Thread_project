@@ -1,0 +1,41 @@
+In this program user ask to calculate the words in file. User declare the pointer type file variable for value reference. File open function used to open the file for reading the content in file. If condition checks whether the file is null if it is the else condition comes in where while condition checks the logic (ch!=eof). Through else condition the content check to end of file. And then to print the result on display.
+
+Problem statement:-  
+This is the program where user will find out the word in the file that is been created.
+
+Create file for content storing.
+Using required condition for fulfilling the requirement.
+Display the result on screen.
+This C program is successfully compiled and run on a System. Output is shown below.
+
+
+#include<stdio.h> 
+void main() 
+{ 
+    FILE *p; 
+    char ch; 
+    int w=1; 
+    clrscr(); 
+    p=fopen("source","r"); 
+    if(p==NULL) 
+     { 
+         printf("file not found"); 
+      } 
+    else 
+      { 
+          ch=fgetc(p); 
+          while(ch!=EOF) 
+                 { 
+                        printf("%c",ch); 
+                        if(ch==' '||ch=='\n') 
+                          { 
+                               w++; 
+                          } 
+                               ch=fgetc(p); 
+                 } 
+                               printf("\nWords in a file are=%d",w); 
+     } 
+                              fclose(p); 
+                              getch(); 
+}
+hello world .
